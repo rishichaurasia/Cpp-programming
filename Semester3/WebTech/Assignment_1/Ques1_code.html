@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create a Sample Form</title>
+</head>
+<body>
+	<div>
+		<h1>Sample Form</h1>
+		<div style="line-height: 2">
+			<form method="get" class="sample-form">
+				Enter your name : <input type="text" name="name" required><br>
+				Email ID : <input type="email" name="email" required><br>
+				Date of Birth : <input type="date" name="dob" required><br>
+				Select gender : <input type="radio" name="gender" value="male">Male
+				<input type="radio" name="gender" value="female">Female
+				<input type="radio" name="gender" value="other">Other<br>
+				Subjects: <input type="checkbox" name="subjects" value="maths">Maths
+				<input type="checkbox" name="subjects" value="cs">Computer Science
+				<input type="checkbox" name="subjects" value="statistics">Statistics <br>
+				Select City : <select name="city">
+					<option value="Prayagraj">Prayagraj</option>
+					<option value="Delhi">Delhi</option>
+					<option value="Mumbai">Mumbai</option>
+					<option value="Indore">Indore</option>
+					<option value="Srinagar">Srinagar</option>
+				</select><br>
+				Upload Photo : <input type="file" name="fileupload" accept="image/*" required><br>
+				Create User ID : <input type="text" name="userid" required><br>
+				Create Password : <input type="password" name="password" required><br>
+				Describe Yourself : <br>
+				<textarea rows="5" cols="50" name="describe-yourself"></textarea><br>
+				<input type = "submit" name = "submit" value = "Submit" />
+         		<input type = "reset" name = "reset"  value = "Reset" />
+         		<input type = "button" name = "ok" value = "OK" />
+			</form>
+		</div>
+	</div>
+</body>
+</html>
