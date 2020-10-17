@@ -1,0 +1,68 @@
+<!--Example of text alignment horizontally and vertically-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+}
+
+h3 {
+  text-align: right;
+}
+
+P{
+  font-size: 60px;
+  text-align: justify; 
+}
+span{
+  font-size:80px;
+  color:red;
+  vertical-align:BOTTOM; /*top,middle,bottom */
+}
+span#decor{
+  font-size:80px;
+  color:blue;
+  vertical-align:top; /*top,middle,bottom */
+  text-decoration: LINE-THROUGH; /*line-through, underline, none*/
+}
+span#transform{
+  color:green;
+  text-transform: CAPITALIZE; /*lowercase, capitalize*/
+}
+
+/*The text-indent property is used to specify the indentation of the first line of a text*/
+p#indent{
+  text-indent: 100px;
+}
+
+/*The letter-spacing property is used to specify the space between the characters in a text.*/
+p#space{
+  font-size:20px;
+  letter-spacing:-3px; /* can be in negative*/
+}
+/*The text-shadow property adds shadow to text.*/
+p#shadow{
+  font-size:20px;
+  letter-spacing: 3px; /* can be in negative*/
+  text-shadow: 2px 2px red;
+}
+</style>
+</head>
+<body>
+
+<h1>Heading 1 (center)</h1>
+<h2>Heading 2 (left)</h2>
+<h3>Heading 3 (right)</h3>
+
+<p>The three headings above are aligned center, left and right. We have also <span>shown the</span> justified text in the p tag  <span id="decor">using the text</span>align property</p>
+<p> HTML (HyperText Markup Language) is the most basic building block of the Web. It defines<span id="transform"> the meaning and structure of web </span>content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).</p>
+<p id="indent"> HTML is the World Wide Web's core markup language. Originally, HTML was primarily designed as a language for semantically describing scientific documents.</p>
+<p id="space">HTML is the World Wide Web's core markup language. Originally, HTML was primarily designed as a language for semantically describing scientific documents.</p>
+<p id="shadow"> This is demo of text in CSS</p>
+</body>
+</html>

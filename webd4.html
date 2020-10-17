@@ -1,0 +1,59 @@
+
+<!--JAVASCRIPT STRING FUNCTIONS-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+
+<body>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi dolorem maxime culpa, omnis voluptatibus praesentium autem, doloremque modi voluptate et ducimus, illum nulla.</p>
+    <div id="content">
+
+    </div>
+    <script>
+       
+        
+        var str1=`this is my car`;
+        var index= str1.indexOf('is'); //to return the position of first occurrence of a substring
+        //index= str1.lastIndexOf('is'); //to return the position of last occurrence of a substring
+        console.log(index);
+        //substring from a string
+        var substring=str1.slice(-10,-3); //will print from 3-9
+        console.log(substring);
+        var substring1=str1.substring(3,10);
+        console.log(substring1);
+
+        //slice can take negative values. substring cannot take negative values
+        var substring2=str1.substr(3,4); //3 is the position of first letter and 4 is the length of substring
+        console.log(substring2);
+
+        //to replace a substring. the replacement is done in new string. old string remains same
+        var replacement= str1.replace('car', 'box');
+        console.log(replacement);
+        console.log(str1);
+        console.log(str1.toUpperCase());
+        console.log(str1.toLowerCase());
+        var newstr= str1.concat('. It is of red color');
+        console.log(newstr);
+
+        var str4="    this is    a sentence   with bank spaces    "
+        console.log(str4);
+        console.log(str4.trim()); //removes whitespaces from front and end
+        var character= str1.charCodeAt(5);
+        console.log(character);
+
+        console.log(str1[2]);
+        alert("Password is case sensitive")
+        confirm("Do you want to continue");
+        prompt("What is your name" ,"megha");
+        
+    </script>
+
+</body>
+</html>    
