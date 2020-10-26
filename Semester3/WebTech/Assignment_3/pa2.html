@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Cookies</title>
+</head>
+<body>
+
+	<h1>Cookies</h1>
+	<div>
+		<div>
+			<label for="name">Name</label>
+			<input type="text" id="name">
+		</div>
+		<br>
+		<div>
+			<label for="value">Value</label>
+			<input type="text" id="value">
+		</div>
+		<br>
+		<button onclick="addCookie()">Add Cookies</button>
+	</div>
+
+	<h3>Stored Cookies</h3>
+	<div>
+		<table border="1" cellpadding="5">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Value</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+	<script>
+		function setCookie(cname, cvalue, exdays = 1) {
+			let d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			let expires = "expires=" + d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+
+		function getAllCookies() {
+			let cookiesList = [];
+
+			if (document.cookie === '') {
+				return [];
+			}
+
+			let ca = document.cookie.split(';');
+			for (let i = 0; i < ca.length; i++) {
+				let cookie = ca[i].trim().split('=');
+				cookiesList.push([cookie[0], cookie[1]]);
+			}
+
+			return cookiesList;
+		}
+
+		function loadCookies() {
+			getAllCookies().forEach(cookie => {
+				document.querySelector('tbody').innerHTML += `
+					<tr>
+						<td>${cookie[0]}</td>
+						<td>${cookie[1]}</td>
+						<td>
+							<button onclick="deleteCookie('${cookie[0]}')">Delete</button>
+						</td>
+					</tr>
+				`;
+			});
+		}
+
+		function clearDisplayedCookies() {
+			document.querySelector('tbody').innerHTML = "";
+		}
+
+		function addCookie() {
+			clearDisplayedCookies();
+
+			let nameField = document.querySelector('#name').value;
+			let valueField = document.querySelector('#value').value;
+
+			setCookie(nameField, valueField);
+
+			nameField = "";
+			valueField = "";
+
+			loadCookies();
+		}
+
+		function deleteCookie(cookie) {
+			clearDisplayedCookies();
+
+			document.cookie = `${cookie}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+
+			loadCookies();
+		}
+
+		loadCookies();
+	</script>
+</body>
+</html>
